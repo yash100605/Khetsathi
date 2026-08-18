@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KhetSaathi | Farm Economics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Merriweather:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/tokens.css" />
+    <link rel="stylesheet" href="./styles/farm-economics.css" />
+    <link rel="stylesheet" href="./styles/ai-assistant.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="container app-header__inner">
+        <a class="brand" href="./index.html" aria-label="KhetSaathi home">
+          <span class="brand__mark">KS</span>
+          <span class="brand__copy">
+            <strong>KhetSaathi</strong>
+            <span>Farm Economics</span>
+          </span>
+        </a>
+        <nav class="app-nav">
+          <a class="app-nav__link" href="./index.html">Home</a>
+          <a class="app-nav__link" href="./my-farm.html">My Farm</a>
+          <a class="app-nav__link" href="./crop-scan.html">Crop Scan</a>
+          <a class="app-nav__link" href="./analysis.html">Analysis</a>
+          <a class="app-nav__link" href="./irrigation-advisor.html">Advisor</a>
+          <a class="app-nav__link" href="./market-insight.html">Market</a>
+          <a class="app-nav__link app-nav__link--active" href="./farm-economics.html">Economics</a>
+          <a class="app-nav__link" href="./follow-up.html">Tracking</a>
+        </nav>
+        <div class="app-header__actions">
+          <button class="avatar-button" type="button" aria-label="Open profile">RP</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-shell">
+      <div class="container economics-layout">
+        <div class="econ-top-bar">
+          <span class="eyebrow">Financial Impact Analysis</span>
+          <h1>Farm Economics</h1>
+          <div class="plot-pill">Plot A - Tomato · 2.5 Acres</div>
+        </div>
+
+        <div class="econ-grid-desktop">
+          <!-- Left Column: Interactive Potential Analysis Breakdown -->
+          <div class="econ-left">
+            <div class="analysis-table-card">
+              <h3>Potential Analysis</h3>
+
+              <!-- Interactive Sliders -->
+              <div class="slider-control-group">
+                <label for="yield-range">
+                  <span>Harvest Volume: <strong id="yield-label">1,200 kg</strong></span>
+                </label>
+                <input type="range" id="yield-range" min="500" max="3000" step="100" value="1200" class="econ-slider" />
+              </div>
+
+              <div class="slider-control-group">
+                <label for="price-range">
+                  <span>Market Price: <strong id="price-label">₹32 / kg</strong></span>
+                </label>
+                <input type="range" id="price-range" min="15" max="60" step="1" value="32" class="econ-slider" />
+              </div>
+
+              <div class="stat-row">
+                <span>Expected Yield</span>
+                <strong id="stat-yield">1,200 kg</strong>
+              </div>
+
+              <div class="stat-row">
+                <span>Current Market Price</span>
+                <strong id="stat-price">₹32 / kg</strong>
+              </div>
+
+              <div class="stat-row stat-row--highlight">
+                <span>Expected Revenue</span>
+                <strong class="text-green" id="stat-revenue">₹38,400</strong>
+              </div>
+
+              <div class="stat-row stat-row--alert">
+                <span>Potential Loss (Disease Risk)</span>
+                <strong class="text-red" id="stat-loss">₹8,500</strong>
+              </div>
+
+              <div class="stat-row">
+                <span>Treatment Cost</span>
+                <strong id="stat-cost">₹1,200</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Decision Engine Financial ROI Card -->
+          <div class="econ-right">
+            <div class="decision-roi-card">
+              <span class="eyebrow">Decision Engine Recommendation</span>
+              <div class="roi-highlight-box">
+                <span class="roi-icon">💰</span>
+                <p>
+                  Treating now could potentially protect <strong id="stat-protected">₹7,300</strong> of your crop value.
+                </p>
+              </div>
+
+              <!-- Insight Q&A AI Assistant Widget -->
+              <div id="ai-qna-widget"></div>
+
+              <div class="roi-action" style="margin-top: 20px;">
+                <a class="button-primary" href="./follow-up.html" style="width: 100%; justify-content: center;">
+                  Take Action &rsaquo;
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Mobile Fixed Bottom Navigation Bar -->
+    <nav class="bottom-nav-bar" aria-label="Mobile navigation">
+      <a class="bottom-nav-item" href="./index.html">
+        <span class="icon">🏠</span>
+        <span>Home</span>
+      </a>
+      <a class="bottom-nav-item" href="./my-farm.html">
+        <span class="icon">🌾</span>
+        <span>My Farm</span>
+      </a>
+      <a class="bottom-nav-item bottom-nav-item--scan" href="./crop-scan.html">
+        <div class="icon-wrap">📷</div>
+        <span>Scan</span>
+      </a>
+      <a class="bottom-nav-item" href="./irrigation-advisor.html">
+        <span class="icon">💧</span>
+        <span>Advisor</span>
+      </a>
+      <a class="bottom-nav-item" href="./market-insight.html">
+        <span class="icon">📈</span>
+        <span>Market</span>
+      </a>
+    </nav>
+
+    <script type="module" src="./src/farm-economics.js"></script>
+  </body>
+</html>

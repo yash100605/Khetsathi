@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KhetSaathi | Weather Insight</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Merriweather:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/tokens.css" />
+    <link rel="stylesheet" href="./styles/weather-insight.css" />
+  </head>
+  <body>
+    <div class="status-strip">
+      <div class="container status-strip__inner">
+        <span>Offline-ready demo</span>
+        <span>Weather data cached: Today, 10:20 AM (Nashik Station)</span>
+      </div>
+    </div>
+
+    <header class="app-header">
+      <div class="container app-header__inner">
+        <a class="brand" href="./index.html" aria-label="KhetSaathi home">
+          <span class="brand__mark">KS</span>
+          <span class="brand__copy">
+            <strong>KhetSaathi</strong>
+            <span>Agricultural decision companion</span>
+          </span>
+        </a>
+        <nav class="app-nav">
+          <a class="app-nav__link" href="./index.html">Home</a>
+          <a class="app-nav__link" href="./my-farm.html">My Farm</a>
+          <a class="app-nav__link" href="./crop-scan.html">Crop Scan</a>
+          <a class="app-nav__link" href="./analysis.html">Analysis</a>
+          <a class="app-nav__link" href="./irrigation-advisor.html">Advisor</a>
+          <a class="app-nav__link app-nav__link--active" href="./weather-insight.html">Weather</a>
+          <a class="app-nav__link" href="./market-insight.html">Market</a>
+          <a class="app-nav__link" href="./farm-activity.html">Activity</a>
+          <a class="app-nav__link" href="./store.html">Store</a>
+        </nav>
+        <div class="app-header__actions">
+          <div class="nav-dropdown">
+            <button class="icon-button" type="button" aria-label="More screens">☰</button>
+            <div class="nav-dropdown__menu">
+              <a class="nav-dropdown__item" href="./onboarding.html">Onboarding Setup</a>
+              <a class="nav-dropdown__item" href="./initial-farm-analysis.html">Initial Farm Analysis</a>
+              <a class="nav-dropdown__item" href="./follow-up.html">Decision Follow-up</a>
+            </div>
+          </div>
+          <button class="avatar-button" type="button" aria-label="Open farmer profile">RP</button>
+        </div>
+      </div>
+    </header>
+
+    <nav class="section-nav" aria-label="Weather Insight sections">
+      <div class="container section-nav__inner">
+        <a href="#overview" class="section-nav__link">Current weather</a>
+        <a href="#timeline" class="section-nav__link">Hourly rain timeline</a>
+        <a href="#leaf-wetness" class="section-nav__link">Leaf wetness & disease risk</a>
+        <a href="#engine-impact" class="section-nav__link">Decision engine impact</a>
+      </div>
+    </nav>
+
+    <main class="page-shell">
+      <section id="overview" class="hero-section">
+        <div class="container hero-layout">
+          <div class="hero-copy">
+            <p class="eyebrow">Screen 06 · Weather Insight</p>
+            <h1>Micro-climate forecast & field moisture timing.</h1>
+            <p class="hero-text">
+              Weather timing signals provide a direct input into KhetSaathi's decision rules. When rain probability exceeds 70%, irrigation is deferred to prevent nutrient runoff and canopy leaf wetness.
+            </p>
+            <div id="weather-summary-strip" class="summary-strip"></div>
+          </div>
+          <div id="weather-hero-card" class="weather-hero-card"></div>
+        </div>
+      </section>
+
+      <section id="timeline" class="section-block">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Rain Probability Timeline</p>
+              <h2>Today’s Precipitation & Humidity Window</h2>
+            </div>
+          </div>
+          <div id="hourly-timeline-grid" class="timeline-grid"></div>
+        </div>
+      </section>
+
+      <section id="leaf-wetness" class="section-block section-block--soft">
+        <div class="container dual-grid">
+          <div>
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Foliage Microclimate</p>
+                <h2>Leaf Wetness Duration (LWD)</h2>
+              </div>
+            </div>
+            <div id="lwd-card" class="panel-card panel-card--large"></div>
+          </div>
+          <div>
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Wind & Dew Point</p>
+                <h2>Spray Condition Boundaries</h2>
+              </div>
+            </div>
+            <div id="spray-cond-card" class="panel-card panel-card--large"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="engine-impact" class="section-block">
+        <div class="container flow-card">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Decision Engine Linkage</p>
+              <h2>How Weather Influences Today’s Recommendation</h2>
+            </div>
+          </div>
+          <div id="weather-rules-list" class="rules-stack"></div>
+          <div class="flow-actions" style="margin-top: 24px;">
+            <a class="button-primary" href="./irrigation-advisor.html">See Irrigation Advisor Impact</a>
+            <a class="button-secondary" href="./index.html">Back to Home Recommendation</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./src/weather-insight.js"></script>
+  </body>
+</html>

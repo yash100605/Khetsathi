@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KhetSaathi | Farm Activity Log</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Merriweather:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/tokens.css" />
+    <link rel="stylesheet" href="./styles/farm-activity.css" />
+  </head>
+  <body>
+    <div class="status-strip">
+      <div class="container status-strip__inner">
+        <span>Offline-ready demo</span>
+        <span id="sync-status-indicator">Sync Status: 1 Pending Offline Log</span>
+      </div>
+    </div>
+
+    <header class="app-header">
+      <div class="container app-header__inner">
+        <a class="brand" href="./index.html" aria-label="KhetSaathi home">
+          <span class="brand__mark">KS</span>
+          <span class="brand__copy">
+            <strong>KhetSaathi</strong>
+            <span>Agricultural decision companion</span>
+          </span>
+        </a>
+        <nav class="app-nav">
+          <a class="app-nav__link" href="./index.html">Home</a>
+          <a class="app-nav__link" href="./my-farm.html">My Farm</a>
+          <a class="app-nav__link" href="./crop-scan.html">Crop Scan</a>
+          <a class="app-nav__link" href="./analysis.html">Analysis</a>
+          <a class="app-nav__link" href="./irrigation-advisor.html">Advisor</a>
+          <a class="app-nav__link" href="./weather-insight.html">Weather</a>
+          <a class="app-nav__link" href="./market-insight.html">Market</a>
+          <a class="app-nav__link app-nav__link--active" href="./farm-activity.html">Activity</a>
+          <a class="app-nav__link" href="./store.html">Store</a>
+        </nav>
+        <div class="app-header__actions">
+          <div class="nav-dropdown">
+            <button class="icon-button" type="button" aria-label="More screens">☰</button>
+            <div class="nav-dropdown__menu">
+              <a class="nav-dropdown__item" href="./onboarding.html">Onboarding Setup</a>
+              <a class="nav-dropdown__item" href="./initial-farm-analysis.html">Initial Farm Analysis</a>
+              <a class="nav-dropdown__item" href="./follow-up.html">Decision Follow-up</a>
+            </div>
+          </div>
+          <button class="avatar-button" type="button" aria-label="Open farmer profile">RP</button>
+        </div>
+      </div>
+    </header>
+
+    <nav class="section-nav" aria-label="Farm Activity sections">
+      <div class="container section-nav__inner">
+        <a href="#overview" class="section-nav__link">Activity overview</a>
+        <a href="#new-action" class="section-nav__link">Log new action</a>
+        <a href="#history-list" class="section-nav__link">Activity history</a>
+        <a href="#sync-queue" class="section-nav__link">Offline queue</a>
+      </div>
+    </nav>
+
+    <main class="page-shell">
+      <section id="overview" class="hero-section">
+        <div class="container hero-layout">
+          <div class="hero-copy">
+            <p class="eyebrow">Screen 08 · Farm Activity</p>
+            <h1>Farmer action log & offline sync status.</h1>
+            <p class="hero-text">
+              Track decisions executed on Plot A. KhetSaathi stores all farmer actions locally when connectivity is low, syncing seamlessly when network returns.
+            </p>
+          </div>
+          <div class="sync-manager-card">
+            <span class="eyebrow">Offline Sync Status</span>
+            <h3 id="queue-count-text">1 Action Waiting to Sync</h3>
+            <p class="muted">Saved locally on device (IndexedDB/Cache).</p>
+            <button id="sync-now-btn" class="button-primary button-sm" type="button">Sync Now to Cloud</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="new-action" class="section-block">
+        <div class="container">
+          <div class="panel-card">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Interactive Logger</p>
+                <h2>Record Today’s Field Action or Observation</h2>
+              </div>
+            </div>
+            <form id="activity-form" class="activity-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="act-type">Action Category</label>
+                  <select id="act-type" required>
+                    <option value="Irrigation Deferral">Irrigation Deferral</option>
+                    <option value="Crop Health Scan">Crop Health Scan</option>
+                    <option value="Canopy Inspection">Canopy Inspection</option>
+                    <option value="Foliar Spray">Foliar Spray</option>
+                    <option value="Soil Observation">Soil Observation</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="act-note">Field Observation Note</label>
+                  <input type="text" id="act-note" placeholder="e.g. Deferred evening drip. Foliage wet from rain." required />
+                </div>
+              </div>
+              <button class="button-primary" type="submit">Log Action (Save Locally)</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section id="history-list" class="section-block section-block--soft">
+        <div class="container">
+          <div class="section-heading-bar">
+            <div>
+              <p class="eyebrow">Logged Events</p>
+              <h2>Activity History for Plot A</h2>
+            </div>
+            <div class="filter-pills" id="act-filter-pills">
+              <button class="pill-btn active" data-filter="all">All</button>
+              <button class="pill-btn" data-filter="Irrigation">Irrigation</button>
+              <button class="pill-btn" data-filter="Crop Health">Scan / Health</button>
+              <button class="pill-btn" data-filter="Inspection">Inspection</button>
+            </div>
+          </div>
+          <div id="logs-container" class="logs-container"></div>
+        </div>
+      </section>
+
+      <section id="sync-queue" class="section-block">
+        <div class="container dual-grid">
+          <div class="info-card">
+            <p class="eyebrow">Closed Loop Feedback</p>
+            <h2>Follow-up Verification</h2>
+            <p class="muted">Logged actions feed directly into KhetSaathi's 24h follow-up evaluation cycle to assess whether symptoms improved.</p>
+            <div style="margin-top: 16px;">
+              <a class="button-secondary" href="./follow-up.html">Open Follow-up Tracker</a>
+            </div>
+          </div>
+          <div class="info-card">
+            <p class="eyebrow">Setup Context</p>
+            <h2>Review Farm Setup</h2>
+            <p class="muted">Check acreage, crop stage, and soil context configured in your profile.</p>
+            <div style="margin-top: 16px;">
+              <a class="button-primary" href="./my-farm.html">Go to My Farm</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./src/farm-activity.js"></script>
+  </body>
+</html>

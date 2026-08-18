@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KhetSaathi | Crop Health Scan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Merriweather:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/tokens.css" />
+    <link rel="stylesheet" href="./styles/crop-scan.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="container app-header__inner">
+        <a class="brand" href="./index.html" aria-label="KhetSaathi home">
+          <span class="brand__mark">KS</span>
+          <span class="brand__copy">
+            <strong>KhetSaathi</strong>
+            <span>Crop Health Diagnostics</span>
+          </span>
+        </a>
+        <nav class="app-nav">
+          <a class="app-nav__link" href="./index.html">Home</a>
+          <a class="app-nav__link" href="./my-farm.html">My Farm</a>
+          <a class="app-nav__link app-nav__link--active" href="./crop-scan.html">Crop Scan</a>
+          <a class="app-nav__link" href="./analysis.html">Analysis</a>
+          <a class="app-nav__link" href="./irrigation-advisor.html">Advisor</a>
+          <a class="app-nav__link" href="./market-insight.html">Market</a>
+          <a class="app-nav__link" href="./farm-economics.html">Economics</a>
+          <a class="app-nav__link" href="./follow-up.html">Tracking</a>
+        </nav>
+        <div class="app-header__actions">
+          <button class="icon-button" type="button" aria-label="Instructions">ℹ️</button>
+          <button class="avatar-button" type="button" aria-label="Open profile">RP</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-shell">
+      <div class="container scan-layout">
+        <div class="scan-header-text">
+          <h1>Crop Health Diagnostics</h1>
+          <p class="subtitle">Take a clear photo of the affected leaf and we will analyze.</p>
+        </div>
+
+        <div class="viewfinder-card">
+          <div class="viewfinder-frame">
+            <img
+              src="https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?auto=format&fit=crop&w=600&q=80"
+              alt="Leaf sample with spots"
+              class="leaf-preview-img"
+            />
+            <!-- Bounding Box Focus Box Overlay -->
+            <div class="bounding-box">
+              <span class="corner tl"></span>
+              <span class="corner tr"></span>
+              <span class="corner bl"></span>
+              <span class="corner br"></span>
+              <span class="focus-label">Early Blight Lesion Focus</span>
+            </div>
+          </div>
+
+          <div class="camera-controls-bar">
+            <button class="cam-sub-btn" type="button" aria-label="Gallery upload">🖼️</button>
+            <a class="shutter-btn" href="./analysis.html" aria-label="Capture photo">
+              <span class="shutter-inner"></span>
+            </a>
+            <button class="cam-sub-btn" type="button" aria-label="Toggle flash">⚡</button>
+          </div>
+        </div>
+
+        <!-- Tips for best result -->
+        <div class="tips-container">
+          <p class="eyebrow">Tips for best result</p>
+          <div class="tips-chips-grid">
+            <div class="tip-chip">
+              <span class="icon">🌿</span>
+              <span>Use natural light</span>
+            </div>
+            <div class="tip-chip">
+              <span class="icon">🔍</span>
+              <span>Focus on affected area</span>
+            </div>
+            <div class="tip-chip">
+              <span class="icon">🍃</span>
+              <span>Keep leaf flat</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Mobile Fixed Bottom Navigation Bar -->
+    <nav class="bottom-nav-bar" aria-label="Mobile navigation">
+      <a class="bottom-nav-item" href="./index.html">
+        <span class="icon">🏠</span>
+        <span>Home</span>
+      </a>
+      <a class="bottom-nav-item" href="./my-farm.html">
+        <span class="icon">🌾</span>
+        <span>My Farm</span>
+      </a>
+      <a class="bottom-nav-item bottom-nav-item--scan active" href="./crop-scan.html">
+        <div class="icon-wrap">📷</div>
+        <span>Scan</span>
+      </a>
+      <a class="bottom-nav-item" href="./irrigation-advisor.html">
+        <span class="icon">💧</span>
+        <span>Advisor</span>
+      </a>
+      <a class="bottom-nav-item" href="./market-insight.html">
+        <span class="icon">📈</span>
+        <span>Market</span>
+      </a>
+    </nav>
+  </body>
+</html>

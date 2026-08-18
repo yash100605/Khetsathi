@@ -1,0 +1,129 @@
+.economics-layout {
+  padding: 24px 0 40px;
+}
+
+.econ-top-bar {
+  margin-bottom: 20px;
+}
+
+.econ-top-bar h1 {
+  font-family: var(--font-heading);
+  font-size: 26px;
+  margin: 0 0 8px;
+}
+
+.plot-pill {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--color-surface);
+  border: var(--border-default);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.econ-grid-desktop {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  gap: 24px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .econ-grid-desktop {
+    grid-template-columns: 1fr;
+  }
+}
+
+.analysis-table-card {
+  padding: 24px;
+  background: var(--color-surface);
+  border: var(--border-default);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+.analysis-table-card h3 {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  margin: 0 0 16px;
+}
+
+.slider-control-group {
+  margin-bottom: 16px;
+}
+
+.slider-control-group label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.econ-slider {
+  width: 100%;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: var(--border-default);
+  font-size: 14px;
+}
+
+.stat-row--highlight {
+  background: var(--color-tint-green);
+  padding: 12px;
+  border-radius: var(--radius-md);
+  margin: 6px 0;
+  border: 0;
+}
+
+.stat-row--alert {
+  background: var(--color-tint-red);
+  padding: 12px;
+  border-radius: var(--radius-md);
+  margin: 6px 0;
+  border: 0;
+}
+
+.text-green {
+  color: var(--color-primary);
+  font-size: 16px;
+}
+
+.text-red {
+  color: var(--color-error);
+  font-size: 16px;
+}
+
+.decision-roi-card {
+  padding: 24px;
+  background: var(--color-surface);
+  border: var(--border-default);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-elevated);
+}
+
+.roi-highlight-box {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  background: var(--color-tint-green);
+  border: 1px solid rgba(21, 128, 61, 0.2);
+  border-radius: var(--radius-lg);
+  margin-top: 12px;
+}
+
+.roi-icon {
+  font-size: 32px;
+}
+
+.roi-highlight-box p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 22px;
+}

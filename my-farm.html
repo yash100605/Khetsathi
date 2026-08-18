@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KhetSaathi | My Farm</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Merriweather:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/tokens.css" />
+    <link rel="stylesheet" href="./styles/my-farm.css" />
+    <link rel="stylesheet" href="./styles/ai-assistant.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="container app-header__inner">
+        <a class="brand" href="./index.html" aria-label="KhetSaathi home">
+          <span class="brand__mark">KS</span>
+          <span class="brand__copy">
+            <strong>KhetSaathi</strong>
+            <span>My Farm Context</span>
+          </span>
+        </a>
+        <nav class="app-nav">
+          <a class="app-nav__link" href="./index.html">Home</a>
+          <a class="app-nav__link app-nav__link--active" href="./my-farm.html">My Farm</a>
+          <a class="app-nav__link" href="./crop-scan.html">Crop Scan</a>
+          <a class="app-nav__link" href="./analysis.html">Analysis</a>
+          <a class="app-nav__link" href="./irrigation-advisor.html">Advisor</a>
+          <a class="app-nav__link" href="./market-insight.html">Market</a>
+          <a class="app-nav__link" href="./farm-economics.html">Economics</a>
+          <a class="app-nav__link" href="./follow-up.html">Tracking</a>
+        </nav>
+        <div class="app-header__actions">
+          <button class="button-primary button-sm" type="button">+ Add Farm</button>
+          <button class="avatar-button" type="button" aria-label="Open profile">RP</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-shell">
+      <div class="container farm-layout">
+        <!-- Interactive Plot Selector Tabs -->
+        <div class="plot-tabs-bar">
+          <button class="plot-tab active" data-plot="Plot A">Plot A (Tomato)</button>
+          <button class="plot-tab" data-plot="Plot B">Plot B (Onion)</button>
+          <button class="plot-tab" data-plot="Plot C">Plot C (Chilli)</button>
+          <button class="plot-tab" data-plot="Plot D">Plot D (Cotton)</button>
+        </div>
+
+        <!-- Desktop Split Layout: Left Column = Hero & Summary, Right Column = 2x2 Metric Grid -->
+        <div class="farm-grid-desktop">
+          <div class="farm-left">
+            <!-- Active Plot Card -->
+            <div class="plot-hero-card">
+              <span class="badge badge--dark">Active Plot · 2.5 Acres</span>
+              <div class="plot-hero-body">
+                <div class="plot-hero-info">
+                  <h2>Plot A - Tomato</h2>
+                  <p>2.5 Acres · 45 Days · Flowering Stage</p>
+                  <span class="muted">Drip Irrigation · Black Loam Soil</span>
+                </div>
+                <div class="plot-hero-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1592841200221-a6898f307baa?auto=format&fit=crop&w=400&q=80"
+                    alt="Tomato Plot"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Farm Summary -->
+            <div class="farm-summary-card">
+              <h3>Farm Summary</h3>
+              <div class="summary-line">
+                <span>Last Irrigation</span>
+                <strong>2 days ago</strong>
+              </div>
+              <div class="summary-line">
+                <span>Last Spray</span>
+                <strong>5 days ago</strong>
+              </div>
+
+              <div class="summary-action-box">
+                <span class="eyebrow">Next Suggested Action</span>
+                <p>Check crop leaves for fungal spot prevention.</p>
+                <a class="button-primary button-sm" href="./crop-scan.html">Check Crop Today</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: 2x2 Condition Grid & Q&A Assistant -->
+          <div class="farm-right">
+            <div class="condition-section-header">
+              <h3>Current Condition</h3>
+              <span class="muted">Updated 7:30 AM</span>
+            </div>
+
+            <div class="condition-grid">
+              <!-- Soil Moisture -->
+              <div class="cond-card">
+                <div class="c-top">
+                  <span class="c-icon">💧</span>
+                  <span class="cond-badge cond-badge--good">Optimal</span>
+                </div>
+                <span class="c-label">Soil Moisture</span>
+                <strong class="cond-val">34%</strong>
+              </div>
+
+              <!-- Temperature -->
+              <div class="cond-card">
+                <div class="c-top">
+                  <span class="c-icon">🌡️</span>
+                  <span class="cond-badge">Normal</span>
+                </div>
+                <span class="c-label">Temperature</span>
+                <strong class="cond-val">28°C</strong>
+              </div>
+
+              <!-- Disease Risk -->
+              <div class="cond-card cond-card--alert">
+                <div class="c-top">
+                  <span class="c-icon">🦠</span>
+                  <span class="cond-badge cond-badge--warn">Early Blight Risk</span>
+                </div>
+                <span class="c-label">Disease Risk</span>
+                <strong class="cond-val">Medium</strong>
+              </div>
+
+              <!-- Growth Status -->
+              <div class="cond-card">
+                <div class="c-top">
+                  <span class="c-icon">🌿</span>
+                  <span class="cond-badge cond-badge--good">Flowering On Track</span>
+                </div>
+                <span class="c-label">Growth Status</span>
+                <strong class="cond-val">Good</strong>
+              </div>
+            </div>
+
+            <a class="button-secondary advisor-cta-btn" href="./irrigation-advisor.html">
+              Open Irrigation Advisor &rsaquo;
+            </a>
+
+            <!-- Insight Q&A AI Assistant Widget -->
+            <div id="ai-qna-widget" style="margin-top: 20px;"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Mobile Fixed Bottom Navigation Bar -->
+    <nav class="bottom-nav-bar" aria-label="Mobile navigation">
+      <a class="bottom-nav-item" href="./index.html">
+        <span class="icon">🏠</span>
+        <span>Home</span>
+      </a>
+      <a class="bottom-nav-item active" href="./my-farm.html">
+        <span class="icon">🌾</span>
+        <span>My Farm</span>
+      </a>
+      <a class="bottom-nav-item bottom-nav-item--scan" href="./crop-scan.html">
+        <div class="icon-wrap">📷</div>
+        <span>Scan</span>
+      </a>
+      <a class="bottom-nav-item" href="./irrigation-advisor.html">
+        <span class="icon">💧</span>
+        <span>Advisor</span>
+      </a>
+      <a class="bottom-nav-item" href="./market-insight.html">
+        <span class="icon">📈</span>
+        <span>Market</span>
+      </a>
+    </nav>
+
+    <script type="module" src="./src/my-farm.js"></script>
+  </body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KhetSaathi | Analysis Result</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Merriweather:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/tokens.css" />
+    <link rel="stylesheet" href="./styles/analysis.css" />
+    <link rel="stylesheet" href="./styles/ai-assistant.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="container app-header__inner">
+        <a class="brand" href="./index.html" aria-label="KhetSaathi home">
+          <span class="brand__mark">KS</span>
+          <span class="brand__copy">
+            <strong>KhetSaathi</strong>
+            <span>Diagnostic Engine</span>
+          </span>
+        </a>
+        <nav class="app-nav">
+          <a class="app-nav__link" href="./index.html">Home</a>
+          <a class="app-nav__link" href="./my-farm.html">My Farm</a>
+          <a class="app-nav__link" href="./crop-scan.html">Crop Scan</a>
+          <a class="app-nav__link app-nav__link--active" href="./analysis.html">Analysis</a>
+          <a class="app-nav__link" href="./irrigation-advisor.html">Advisor</a>
+          <a class="app-nav__link" href="./market-insight.html">Market</a>
+          <a class="app-nav__link" href="./farm-economics.html">Economics</a>
+          <a class="app-nav__link" href="./follow-up.html">Tracking</a>
+        </nav>
+        <div class="app-header__actions">
+          <button class="icon-button" type="button" aria-label="Share">🔗</button>
+          <button class="avatar-button" type="button" aria-label="Open profile">RP</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-shell">
+      <div class="container analysis-layout">
+        <div class="analysis-grid-desktop">
+          <!-- Left Column: Diagnostic Diagnosis Card -->
+          <div class="analysis-left">
+            <div class="diagnosis-card">
+              <div class="diag-header">
+                <div class="diag-title-wrap">
+                  <span class="shield-icon">🛡️</span>
+                  <div>
+                    <h2 class="diag-title">Early Blight Detected</h2>
+                    <span class="diag-pathogen">Alternaria solani</span>
+                  </div>
+                </div>
+                <span class="conf-pill">Confidence: 87%</span>
+              </div>
+
+              <div class="severity-block">
+                <div class="sev-label-row">
+                  <span>Severity</span>
+                  <strong>68% (Moderate)</strong>
+                </div>
+                <div class="sev-bar-wrap">
+                  <div class="sev-bar-fill" style="width: 68%;"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Image preview box -->
+            <div class="scanned-image-card">
+              <span class="eyebrow">Scanned Leaf Image</span>
+              <div class="scanned-img-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?auto=format&fit=crop&w=600&q=80"
+                  alt="Scanned tomato leaf"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Decision Engine Analysis & Recommendation -->
+          <div class="analysis-right">
+            <div class="recom-card">
+              <div class="section-heading-row">
+                <h3 class="recom-title">Recommendation from KhetSaathi</h3>
+                <span class="engine-badge">Decision Engine V2</span>
+              </div>
+
+              <div class="engine-analysis-grid">
+                <div class="e-metric">
+                  <span class="e-lbl">Rain Forecast</span>
+                  <span class="e-val">Rain expected in 18 hrs</span>
+                </div>
+                <div class="e-metric">
+                  <span class="e-lbl">Soil Moisture</span>
+                  <span class="e-val">34% (Sufficient)</span>
+                </div>
+                <div class="e-metric">
+                  <span class="e-lbl">Crop Stage</span>
+                  <span class="e-val">Flowering Stage</span>
+                </div>
+              </div>
+
+              <div class="recom-narrative-box">
+                <span class="eyebrow">Our Recommendation</span>
+                <p class="recom-text">
+                  Avoid irrigation today. Apply recommended protective treatment after the rain window. Monitor affected area and upload follow-up photo in 2–3 days.
+                </p>
+              </div>
+
+              <!-- Insight Q&A AI Assistant Widget -->
+              <div id="ai-qna-widget"></div>
+
+              <div class="recom-actions" style="margin-top: 20px;">
+                <a class="button-primary" href="./follow-up.html" style="width: 100%; justify-content: center;">
+                  Start Treatment Tracking &rsaquo;
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Mobile Fixed Bottom Navigation Bar -->
+    <nav class="bottom-nav-bar" aria-label="Mobile navigation">
+      <a class="bottom-nav-item" href="./index.html">
+        <span class="icon">🏠</span>
+        <span>Home</span>
+      </a>
+      <a class="bottom-nav-item" href="./my-farm.html">
+        <span class="icon">🌾</span>
+        <span>My Farm</span>
+      </a>
+      <a class="bottom-nav-item bottom-nav-item--scan" href="./crop-scan.html">
+        <div class="icon-wrap">📷</div>
+        <span>Scan</span>
+      </a>
+      <a class="bottom-nav-item" href="./irrigation-advisor.html">
+        <span class="icon">💧</span>
+        <span>Advisor</span>
+      </a>
+      <a class="bottom-nav-item" href="./market-insight.html">
+        <span class="icon">📈</span>
+        <span>Market</span>
+      </a>
+    </nav>
+
+    <script type="module" src="./src/analysis.js"></script>
+  </body>
+</html>

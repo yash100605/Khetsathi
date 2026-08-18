@@ -1,0 +1,185 @@
+.tracking-layout {
+  padding: 24px 0 40px;
+}
+
+.tracking-grid-desktop {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .tracking-grid-desktop {
+    grid-template-columns: 1fr;
+  }
+}
+
+.disease-banner-card {
+  padding: 20px;
+  background: var(--color-surface);
+  border: var(--border-default);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  margin-bottom: 20px;
+}
+
+.d-banner-title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.shield {
+  font-size: 32px;
+}
+
+.d-banner-title h2 {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  margin: 0 0 2px;
+  color: var(--color-error);
+}
+
+.d-banner-title p {
+  margin: 0;
+  font-size: 13px;
+}
+
+.timeline-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.timeline-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  background: var(--color-surface);
+  border: var(--border-default);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+.timeline-card--latest {
+  border-color: var(--color-primary);
+  background: linear-gradient(90deg, var(--color-tint-green) 0%, #ffffff 100%);
+}
+
+.t-check {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--color-surface-muted);
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+}
+
+.t-check.completed {
+  background: var(--color-tint-green);
+  color: var(--color-primary);
+}
+
+.t-check.active {
+  background: var(--color-primary);
+  color: #ffffff;
+}
+
+.t-info {
+  flex: 1;
+}
+
+.t-date-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.t-date-row strong {
+  font-size: 14px;
+}
+
+.t-sev-badge {
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.t-sev-badge--high {
+  background: var(--color-tint-red);
+  color: var(--color-error);
+}
+
+.t-sev-badge--med {
+  background: rgba(217, 119, 6, 0.12);
+  color: var(--color-warning);
+}
+
+.t-sev-badge--low {
+  background: var(--color-tint-green);
+  color: var(--color-primary);
+}
+
+.t-info p {
+  margin: 0;
+  font-size: 12px;
+}
+
+.t-thumb {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: var(--border-default);
+  flex-shrink: 0;
+}
+
+.t-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.progress-outcome-card {
+  padding: 24px;
+  background: var(--color-surface);
+  border: var(--border-default);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-elevated);
+}
+
+.outcome-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 20px;
+  background: var(--color-tint-green);
+  border: 1px solid rgba(21, 128, 61, 0.2);
+  border-radius: var(--radius-lg);
+  margin-top: 12px;
+}
+
+.outcome-icon {
+  font-size: 28px;
+}
+
+.outcome-box h3 {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  margin: 0 0 4px;
+  color: var(--color-primary);
+}
+
+.outcome-box p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--color-text);
+}

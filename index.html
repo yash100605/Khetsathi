@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KhetSaathi | Smart Farming Companion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Merriweather:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/tokens.css" />
+    <link rel="stylesheet" href="./styles/home.css" />
+    <link rel="stylesheet" href="./styles/ai-assistant.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="container app-header__inner">
+        <a class="brand" href="./index.html" aria-label="KhetSaathi home">
+          <span class="brand__mark">KS</span>
+          <span class="brand__copy">
+            <strong>KhetSaathi</strong>
+            <span>Decision Engine</span>
+          </span>
+        </a>
+        <nav class="app-nav">
+          <a class="app-nav__link app-nav__link--active" href="./index.html">Home</a>
+          <a class="app-nav__link" href="./my-farm.html">My Farm</a>
+          <a class="app-nav__link" href="./crop-scan.html">Crop Scan</a>
+          <a class="app-nav__link" href="./analysis.html">Analysis</a>
+          <a class="app-nav__link" href="./irrigation-advisor.html">Advisor</a>
+          <a class="app-nav__link" href="./market-insight.html">Market</a>
+          <a class="app-nav__link" href="./farm-economics.html">Economics</a>
+          <a class="app-nav__link" href="./follow-up.html">Tracking</a>
+        </nav>
+        <div class="app-header__actions">
+          <button class="icon-button" type="button" aria-label="Notifications">🔔</button>
+          <button class="avatar-button" type="button" aria-label="Open profile">RP</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-shell">
+      <div class="container home-layout">
+        <!-- Top Greeting Bar & Quick Weather Chips -->
+        <section class="user-greeting-section">
+          <div class="greeting-text">
+            <span class="eyebrow">Welcome Back</span>
+            <h1>Good Morning Ramesh 👋</h1>
+          </div>
+          <div class="weather-chips-row">
+            <div class="w-chip">
+              <span class="w-icon">☀️</span>
+              <span class="w-val">28°C</span>
+              <span class="w-lbl">Sunny</span>
+            </div>
+            <div class="w-chip">
+              <span class="w-icon">💧</span>
+              <span class="w-val">65%</span>
+              <span class="w-lbl">Humidity</span>
+            </div>
+            <div class="w-chip w-chip--alert">
+              <span class="w-icon">🌧️</span>
+              <span class="w-val">18 hrs</span>
+              <span class="w-lbl">Rain Forecast</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Desktop Split Layout: Left Column = Farm Hero & Quick Actions, Right Column = Decision Stack -->
+        <div class="home-grid-desktop">
+          <div class="home-left">
+            <!-- Hero Farm Card -->
+            <div class="hero-farm-card">
+              <div class="h-card-header">
+                <span class="badge badge--green">Active Farm</span>
+                <span class="text-muted">Updated 10m ago</span>
+              </div>
+              <div class="h-card-body">
+                <div class="h-crop-thumb">
+                  <img
+                    src="https://images.unsplash.com/photo-1592841200221-a6898f307baa?auto=format&fit=crop&w=300&q=80"
+                    alt="Tomato Crop"
+                  />
+                </div>
+                <div class="h-crop-meta">
+                  <h2>Plot A - Tomato</h2>
+                  <p class="muted">2.5 Acres · Flowering Stage</p>
+                  <div class="h-tags">
+                    <span class="tag">Drip Irrigation</span>
+                    <span class="tag">Black Loam Soil</span>
+                  </div>
+                </div>
+              </div>
+              <div class="h-card-footer">
+                <a class="button-secondary button-sm" href="./my-farm.html">View Plot Details &rsaquo;</a>
+              </div>
+            </div>
+
+            <!-- Quick Action Grid -->
+            <div class="quick-actions-card">
+              <h3>Quick Actions</h3>
+              <div class="qa-grid">
+                <a class="qa-btn" href="./crop-scan.html">
+                  <span class="qa-icon">📷</span>
+                  <span>Scan Crop</span>
+                </a>
+                <a class="qa-btn" href="./irrigation-advisor.html">
+                  <span class="qa-icon">💧</span>
+                  <span>Water Advice</span>
+                </a>
+                <a class="qa-btn" href="./market-insight.html">
+                  <span class="qa-icon">📈</span>
+                  <span>Mandi Rates</span>
+                </a>
+                <a class="qa-btn" href="./farm-economics.html">
+                  <span class="qa-icon">💰</span>
+                  <span>ROI Calc</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Today's Decisions Engine Stack -->
+          <div class="home-right">
+            <div class="decisions-stack-card">
+              <div class="stack-header">
+                <div>
+                  <span class="eyebrow">AI Decision Engine</span>
+                  <h2>Today's Priority Actions</h2>
+                </div>
+                <span class="priority-count-pill">3 Decisions Ready</span>
+              </div>
+
+              <div class="decision-cards-list">
+                <!-- Decision 1: Irrigation -->
+                <div class="d-card d-card--info">
+                  <div class="d-card-header">
+                    <span class="d-category">💧 Irrigation</span>
+                    <span class="d-time">Due Today</span>
+                  </div>
+                  <h3>Hold Irrigation for Plot A</h3>
+                  <p>
+                    Soil moisture is at 34% optimal. Rain expected in 18 hrs will supply 18mm water naturally.
+                  </p>
+                  <div class="d-card-actions">
+                    <a class="button-primary button-sm" href="./irrigation-advisor.html">View Advisor &rsaquo;</a>
+                  </div>
+                </div>
+
+                <!-- Decision 2: Disease Protection -->
+                <div class="d-card d-card--warning">
+                  <div class="d-card-header">
+                    <span class="d-category">🛡️ Disease Protection</span>
+                    <span class="d-time">Action Required</span>
+                  </div>
+                  <h3>Early Blight Risk Warning</h3>
+                  <p>
+                    Leaf wetness duration > 8.5 hours. Scan canopy foliage to confirm lesion progression.
+                  </p>
+                  <div class="d-card-actions">
+                    <a class="button-primary button-sm" href="./crop-scan.html">Run Scan &rsaquo;</a>
+                  </div>
+                </div>
+
+                <!-- Decision 3: Market Intelligence -->
+                <div class="d-card d-card--success">
+                  <div class="d-card-header">
+                    <span class="d-category">📈 Market Opportunity</span>
+                    <span class="d-time">Nashik APMC</span>
+                  </div>
+                  <h3>Tomato Prices Up +12%</h3>
+                  <p>
+                    Current rate ₹32/kg. Decision engine projects further rise over the next 4 days.
+                  </p>
+                  <div class="d-card-actions">
+                    <a class="button-primary button-sm" href="./market-insight.html">Check Mandi Rates &rsaquo;</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Insight Q&A AI Assistant Widget -->
+              <div id="ai-qna-widget"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Mobile Fixed Bottom Navigation Bar -->
+    <nav class="bottom-nav-bar" aria-label="Mobile navigation">
+      <a class="bottom-nav-item active" href="./index.html">
+        <span class="icon">🏠</span>
+        <span>Home</span>
+      </a>
+      <a class="bottom-nav-item" href="./my-farm.html">
+        <span class="icon">🌾</span>
+        <span>My Farm</span>
+      </a>
+      <a class="bottom-nav-item bottom-nav-item--scan" href="./crop-scan.html">
+        <div class="icon-wrap">📷</div>
+        <span>Scan</span>
+      </a>
+      <a class="bottom-nav-item" href="./irrigation-advisor.html">
+        <span class="icon">💧</span>
+        <span>Advisor</span>
+      </a>
+      <a class="bottom-nav-item" href="./market-insight.html">
+        <span class="icon">📈</span>
+        <span>Market</span>
+      </a>
+    </nav>
+
+    <script type="module" src="./src/home.js"></script>
+  </body>
+</html>

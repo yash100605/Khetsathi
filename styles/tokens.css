@@ -1,0 +1,304 @@
+/* Global Design Tokens & Components for KhetSaathi */
+
+:root {
+  /* Color Palette - KhetSaathi Green Palette */
+  --color-primary: #15803d; /* Vibrant Forest Green */
+  --color-primary-hover: #166534;
+  --color-secondary: #854d0e; /* Earthy Ochre */
+  --color-bg: #f8fafc; /* Crisp Neutral Background */
+  --color-surface: #ffffff;
+  --color-surface-muted: #f1f5f9;
+  --color-text: #0f172a;
+  --color-text-muted: #64748b;
+  --color-border: #e2e8f0;
+
+  /* Accent Tints */
+  --color-tint-green: #f0fdf4;
+  --color-tint-red: #fef2f2;
+  --color-error: #dc2626;
+  --color-warning: #d97706;
+
+  /* Typography */
+  --font-heading: 'Merriweather', serif;
+  --font-body: 'Manrope', sans-serif;
+
+  /* Shadows & Elevation */
+  --shadow-card: 0 4px 20px -2px rgba(15, 23, 42, 0.06);
+  --shadow-elevated: 0 10px 30px -4px rgba(15, 23, 42, 0.12);
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+
+  /* Borders */
+  --border-default: 1px solid var(--color-border);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Container Utilities */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header Component */
+.app-header {
+  background: var(--color-surface);
+  border-bottom: var(--border-default);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.app-header__inner {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.brand__mark {
+  width: 38px;
+  height: 38px;
+  background: var(--color-primary);
+  color: #ffffff;
+  border-radius: var(--radius-md);
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  font-size: 16px;
+}
+
+.brand__copy {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand__copy strong {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.brand__copy span {
+  font-size: 11px;
+  color: var(--color-text-muted);
+}
+
+.app-nav {
+  display: flex;
+  gap: 8px;
+}
+
+.app-nav__link {
+  text-decoration: none;
+  color: var(--color-text-muted);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  transition: all 150ms ease;
+}
+
+.app-nav__link:hover {
+  color: var(--color-primary);
+  background: var(--color-surface-muted);
+}
+
+.app-nav__link--active {
+  color: var(--color-primary);
+  background: var(--color-tint-green);
+  font-weight: 700;
+}
+
+.app-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon-button {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: var(--border-default);
+  background: var(--color-surface);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.avatar-button {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--color-tint-green);
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  font-weight: 700;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+/* Fixed Bottom Navigation Bar (Mobile Viewports Only) */
+.bottom-nav-bar {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .app-nav {
+    display: none;
+  }
+
+  .page-shell {
+    padding-bottom: 84px;
+  }
+
+  .bottom-nav-bar {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 64px;
+    background: var(--color-surface);
+    border-top: var(--border-default);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+    z-index: 1000;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
+
+.bottom-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: var(--color-text-muted);
+  font-size: 11px;
+  font-weight: 600;
+  gap: 3px;
+  flex: 1;
+}
+
+.bottom-nav-item.active {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.bottom-nav-item .icon {
+  font-size: 20px;
+}
+
+.bottom-nav-item--scan .icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+  margin-top: -16px;
+  box-shadow: 0 4px 10px rgba(21, 128, 61, 0.3);
+}
+
+/* Typography & Button Utilities */
+.eyebrow {
+  margin: 0 0 6px;
+  color: var(--color-secondary);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.button-primary,
+.button-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 20px;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 180ms ease;
+  text-decoration: none;
+}
+
+.button-primary {
+  border: 0;
+  background: var(--color-primary);
+  color: #ffffff;
+  box-shadow: var(--shadow-card);
+}
+
+.button-primary:hover {
+  background: var(--color-primary-hover);
+}
+
+.button-secondary {
+  background: var(--color-surface);
+  border: var(--border-default);
+  color: var(--color-text);
+}
+
+.button-secondary:hover {
+  background: var(--color-surface-muted);
+}
+
+.button-sm {
+  min-height: 36px;
+  padding: 0 14px;
+  font-size: 13px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.badge--green {
+  background: var(--color-tint-green);
+  color: var(--color-primary);
+}
+
+.badge--dark {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.muted {
+  color: var(--color-text-muted);
+}

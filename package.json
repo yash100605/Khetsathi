@@ -1,0 +1,13 @@
+{
+  "name": "khetsaathi-app",
+  "version": "1.0.0",
+  "description": "KhetSaathi Decision Engine Web Application",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve -l 8080 .",
+    "dev": "npx serve -l 5500 ."
+  },
+  "dependencies": {
+    "serve": "^14.2.1"
+  }
+}

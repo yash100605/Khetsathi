@@ -1,0 +1,173 @@
+.analysis-layout {
+  padding: 24px 0 40px;
+}
+
+.analysis-grid-desktop {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  gap: 24px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .analysis-grid-desktop {
+    grid-template-columns: 1fr;
+  }
+}
+
+.diagnosis-card {
+  padding: 20px;
+  background: var(--color-tint-red);
+  border: 1px solid rgba(220, 38, 38, 0.2);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  margin-bottom: 20px;
+}
+
+.diag-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.diag-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.shield-icon {
+  font-size: 28px;
+}
+
+.diag-title {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  margin: 0;
+  color: var(--color-error);
+}
+
+.diag-pathogen {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.conf-pill {
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(220, 38, 38, 0.12);
+  color: var(--color-error);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.severity-block {
+  margin-top: 12px;
+}
+
+.sev-label-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.sev-bar-wrap {
+  width: 100%;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(220, 38, 38, 0.15);
+  overflow: hidden;
+}
+
+.sev-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: var(--color-error);
+}
+
+.scanned-image-card {
+  padding: 16px;
+  background: var(--color-surface);
+  border: var(--border-default);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+.scanned-img-wrap {
+  width: 100%;
+  height: 180px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.scanned-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.recom-card {
+  padding: 24px;
+  background: var(--color-surface);
+  border: var(--border-default);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-elevated);
+}
+
+.recom-title {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  margin: 0;
+}
+
+.engine-badge {
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: var(--color-tint-green);
+  color: var(--color-primary);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.engine-analysis-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 16px 0;
+  padding: 14px;
+  background: var(--color-bg);
+  border-radius: var(--radius-md);
+}
+
+.e-metric {
+  display: flex;
+  flex-direction: column;
+}
+
+.e-lbl {
+  font-size: 11px;
+  color: var(--color-text-muted);
+}
+
+.e-val {
+  font-size: 13px;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+.recom-narrative-box {
+  padding: 16px;
+  background: var(--color-tint-green);
+  border-radius: var(--radius-md);
+  border-left: 4px solid var(--color-primary);
+}
+
+.recom-text {
+  margin: 6px 0 0;
+  font-size: 15px;
+  line-height: 24px;
+}

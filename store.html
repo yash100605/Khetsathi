@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KhetSaathi | Input Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Merriweather:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/tokens.css" />
+    <link rel="stylesheet" href="./styles/store.css" />
+  </head>
+  <body>
+    <div class="status-strip">
+      <div class="container status-strip__inner">
+        <span>Offline-ready demo</span>
+        <span>Farm input pricing updated: Today, 8:00 AM</span>
+      </div>
+    </div>
+
+    <header class="app-header">
+      <div class="container app-header__inner">
+        <a class="brand" href="./index.html" aria-label="KhetSaathi home">
+          <span class="brand__mark">KS</span>
+          <span class="brand__copy">
+            <strong>KhetSaathi</strong>
+            <span>Agricultural decision companion</span>
+          </span>
+        </a>
+        <nav class="app-nav">
+          <a class="app-nav__link" href="./index.html">Home</a>
+          <a class="app-nav__link" href="./my-farm.html">My Farm</a>
+          <a class="app-nav__link" href="./crop-scan.html">Crop Scan</a>
+          <a class="app-nav__link" href="./analysis.html">Analysis</a>
+          <a class="app-nav__link" href="./irrigation-advisor.html">Advisor</a>
+          <a class="app-nav__link" href="./weather-insight.html">Weather</a>
+          <a class="app-nav__link" href="./market-insight.html">Market</a>
+          <a class="app-nav__link" href="./farm-activity.html">Activity</a>
+          <a class="app-nav__link app-nav__link--active" href="./store.html">Store</a>
+        </nav>
+        <div class="app-header__actions">
+          <div class="nav-dropdown">
+            <button class="icon-button" type="button" aria-label="More screens">☰</button>
+            <div class="nav-dropdown__menu">
+              <a class="nav-dropdown__item" href="./onboarding.html">Onboarding Setup</a>
+              <a class="nav-dropdown__item" href="./initial-farm-analysis.html">Initial Farm Analysis</a>
+              <a class="nav-dropdown__item" href="./follow-up.html">Decision Follow-up</a>
+            </div>
+          </div>
+          <button class="avatar-button" type="button" aria-label="Open farmer profile">RP</button>
+        </div>
+      </div>
+    </header>
+
+    <nav class="section-nav" aria-label="Store sections">
+      <div class="container section-nav__inner">
+        <a href="#collections" class="section-nav__link">Featured collections</a>
+        <a href="#catalog" class="section-nav__link">Product catalog</a>
+        <a href="#alignment" class="section-nav__link">Decision engine ethics</a>
+      </div>
+    </nav>
+
+    <main class="page-shell">
+      <section class="hero-section">
+        <div class="container hero-layout">
+          <div class="hero-copy">
+            <p class="eyebrow">Screen 09 · Input Store Catalog</p>
+            <h1>Dependable farm inputs aligned with agronomic recommendations.</h1>
+            <p class="hero-text">
+              Browse biostimulants, micronutrients, and crop protection categories. KhetSaathi provides transparent product context while keeping specific chemical prescriptions independent from store promotion.
+            </p>
+          </div>
+          <div class="store-badge-card">
+            <span class="store-badge-pill">Verified Agri Inputs</span>
+            <h3>Direct Field Availability</h3>
+            <p class="muted">Clear pricing, verified pack sizes, and offline-compatible catalogue items.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="collections" class="section-block">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Curated groups</p>
+              <h2>Seasonal Collections</h2>
+            </div>
+          </div>
+          <div id="collections-grid" class="collections-grid"></div>
+        </div>
+      </section>
+
+      <section id="catalog" class="section-block section-block--soft">
+        <div class="container">
+          <div class="section-heading-bar">
+            <div>
+              <p class="eyebrow">Full catalog</p>
+              <h2>Farm Inputs & Supplies</h2>
+            </div>
+            <div class="search-filter-box">
+              <input type="text" id="store-search" placeholder="Search inputs (e.g. Seaweed, Rain Guard)..." />
+              <select id="category-filter">
+                <option value="all">All Categories</option>
+                <option value="Biostimulants">Biostimulants</option>
+                <option value="Crop Protection">Crop Protection</option>
+                <option value="Micronutrients">Micronutrients</option>
+              </select>
+            </div>
+          </div>
+          <div id="products-grid" class="products-grid"></div>
+        </div>
+      </section>
+
+      <section id="alignment" class="section-block">
+        <div class="container dual-grid">
+          <div class="info-card">
+            <p class="eyebrow">Integrity Boundary</p>
+            <h2>Separation of Decision & Commerce</h2>
+            <p class="muted">
+              KhetSaathi’s decision engine recommends action categories (e.g. "Defer overhead spray", "Apply micronutrient support at vegetative stage"). Store links exist solely to help growers source certified inputs transparently.
+            </p>
+          </div>
+          <div class="info-card">
+            <p class="eyebrow">Next Navigation</p>
+            <h2>Explore Specific Product Details</h2>
+            <p class="muted">Click any product in the catalog above to view full agronomic specifications, usage guidance, and pack pricing.</p>
+            <div style="margin-top: 16px;">
+              <a class="button-primary" href="./product.html?id=product-seaweed">View Featured Product</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./src/store.js"></script>
+  </body>
+</html>

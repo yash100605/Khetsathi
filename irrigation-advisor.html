@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KhetSaathi | Irrigation Advisor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Merriweather:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/tokens.css" />
+    <link rel="stylesheet" href="./styles/irrigation-advisor.css" />
+    <link rel="stylesheet" href="./styles/ai-assistant.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="container app-header__inner">
+        <a class="brand" href="./index.html" aria-label="KhetSaathi home">
+          <span class="brand__mark">KS</span>
+          <span class="brand__copy">
+            <strong>KhetSaathi</strong>
+            <span>Irrigation Advisor</span>
+          </span>
+        </a>
+        <nav class="app-nav">
+          <a class="app-nav__link" href="./index.html">Home</a>
+          <a class="app-nav__link" href="./my-farm.html">My Farm</a>
+          <a class="app-nav__link" href="./crop-scan.html">Crop Scan</a>
+          <a class="app-nav__link" href="./analysis.html">Analysis</a>
+          <a class="app-nav__link app-nav__link--active" href="./irrigation-advisor.html">Advisor</a>
+          <a class="app-nav__link" href="./market-insight.html">Market</a>
+          <a class="app-nav__link" href="./farm-economics.html">Economics</a>
+          <a class="app-nav__link" href="./follow-up.html">Tracking</a>
+        </nav>
+        <div class="app-header__actions">
+          <button class="avatar-button" type="button" aria-label="Open profile">RP</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-shell">
+      <div class="container advisor-layout">
+        <div class="advisor-top-bar">
+          <div class="plot-select-pill">
+            <span>Selected Plot:</span>
+            <strong id="adv-plot-name">Plot A - Tomato</strong>
+          </div>
+        </div>
+
+        <div class="advisor-grid-desktop">
+          <!-- Left Column: Soil Moisture Meter -->
+          <div class="advisor-left">
+            <div class="moisture-card">
+              <div class="moisture-header">
+                <span class="eyebrow">Real-Time Sensor</span>
+                <h2>Soil Moisture Status</h2>
+              </div>
+              <div class="moisture-display">
+                <span class="moisture-val" id="adv-moisture-val">34%</span>
+                <span class="moisture-badge" id="adv-moisture-badge">Optimal</span>
+              </div>
+              <div class="moisture-bar-wrap">
+                <div class="moisture-bar-fill" id="adv-moisture-bar" style="width: 34%;"></div>
+              </div>
+              <div class="moisture-ticks">
+                <span>0% (Dry)</span>
+                <span id="adv-target-tick">34% (Optimal)</span>
+                <span>100% (Wet)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: 7-Day Forecast & Decision Card -->
+          <div class="advisor-right">
+            <div class="forecast-section">
+              <span class="eyebrow">7-Day Weather Window</span>
+              <div class="forecast-strip">
+                <div class="f-day">
+                  <span class="d-name">Mon</span>
+                  <span class="d-icon">☀️</span>
+                  <span class="d-temp">28°</span>
+                </div>
+                <div class="f-day f-day--rain">
+                  <span class="d-name">Tue</span>
+                  <span class="d-icon">🌧️</span>
+                  <span class="d-temp">27°</span>
+                </div>
+                <div class="f-day f-day--rain">
+                  <span class="d-name">Wed</span>
+                  <span class="d-icon">🌧️</span>
+                  <span class="d-temp">26°</span>
+                </div>
+                <div class="f-day">
+                  <span class="d-name">Thu</span>
+                  <span class="d-icon">⛅</span>
+                  <span class="d-temp">28°</span>
+                </div>
+                <div class="f-day">
+                  <span class="d-name">Fri</span>
+                  <span class="d-icon">☀️</span>
+                  <span class="d-temp">29°</span>
+                </div>
+                <div class="f-day">
+                  <span class="d-name">Sat</span>
+                  <span class="d-icon">☀️</span>
+                  <span class="d-temp">30°</span>
+                </div>
+                <div class="f-day">
+                  <span class="d-name">Sun</span>
+                  <span class="d-icon">☀️</span>
+                  <span class="d-temp">30°</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="decision-result-card">
+              <div class="drop-icon-wrap">💧</div>
+              <div>
+                <span class="eyebrow">Today’s Water Decision</span>
+                <h3 id="adv-decision-title">Don’t Irrigate Today</h3>
+                <p id="adv-decision-desc">Soil moisture is optimal and rain is expected tomorrow.</p>
+              </div>
+            </div>
+
+            <!-- Insight Q&A AI Assistant Widget -->
+            <div id="ai-qna-widget"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Mobile Fixed Bottom Navigation Bar -->
+    <nav class="bottom-nav-bar" aria-label="Mobile navigation">
+      <a class="bottom-nav-item" href="./index.html">
+        <span class="icon">🏠</span>
+        <span>Home</span>
+      </a>
+      <a class="bottom-nav-item" href="./my-farm.html">
+        <span class="icon">🌾</span>
+        <span>My Farm</span>
+      </a>
+      <a class="bottom-nav-item bottom-nav-item--scan" href="./crop-scan.html">
+        <div class="icon-wrap">📷</div>
+        <span>Scan</span>
+      </a>
+      <a class="bottom-nav-item active" href="./irrigation-advisor.html">
+        <span class="icon">💧</span>
+        <span>Advisor</span>
+      </a>
+      <a class="bottom-nav-item" href="./market-insight.html">
+        <span class="icon">📈</span>
+        <span>Market</span>
+      </a>
+    </nav>
+
+    <script type="module" src="./src/irrigation-advisor.js"></script>
+  </body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KhetSaathi | Treatment Tracking</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Merriweather:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/tokens.css" />
+    <link rel="stylesheet" href="./styles/follow-up.css" />
+    <link rel="stylesheet" href="./styles/ai-assistant.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="container app-header__inner">
+        <a class="brand" href="./index.html" aria-label="KhetSaathi home">
+          <span class="brand__mark">KS</span>
+          <span class="brand__copy">
+            <strong>KhetSaathi</strong>
+            <span>Treatment Outcome Tracker</span>
+          </span>
+        </a>
+        <nav class="app-nav">
+          <a class="app-nav__link" href="./index.html">Home</a>
+          <a class="app-nav__link" href="./my-farm.html">My Farm</a>
+          <a class="app-nav__link" href="./crop-scan.html">Crop Scan</a>
+          <a class="app-nav__link" href="./analysis.html">Analysis</a>
+          <a class="app-nav__link" href="./irrigation-advisor.html">Advisor</a>
+          <a class="app-nav__link" href="./market-insight.html">Market</a>
+          <a class="app-nav__link" href="./farm-economics.html">Economics</a>
+          <a class="app-nav__link app-nav__link--active" href="./follow-up.html">Tracking</a>
+        </nav>
+        <div class="app-header__actions">
+          <button class="icon-button" type="button" aria-label="Share">🔗</button>
+          <button class="avatar-button" type="button" aria-label="Open profile">RP</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-shell">
+      <div class="container tracking-layout">
+        <div class="tracking-grid-desktop">
+          <!-- Left Column: Disease Header & Timeline Cards -->
+          <div class="tracking-left">
+            <div class="disease-banner-card">
+              <div class="d-banner-title">
+                <span class="shield">🛡️</span>
+                <div>
+                  <h2>Early Blight</h2>
+                  <p class="muted">Started 14 May 2024 · Plot A Tomato</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-stack" id="timeline-stack">
+              <span class="eyebrow">Progression History</span>
+
+              <!-- Day 1 -->
+              <div class="timeline-card">
+                <div class="t-check completed">✓</div>
+                <div class="t-info">
+                  <div class="t-date-row">
+                    <strong>Day 1 - 14 May</strong>
+                    <span class="t-sev-badge t-sev-badge--high">Severity: 68%</span>
+                  </div>
+                  <p class="muted">Initial scan detected early blight lesions on canopy.</p>
+                </div>
+                <div class="t-thumb">
+                  <img
+                    src="https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?auto=format&fit=crop&w=200&q=80"
+                    alt="Day 1 scan"
+                  />
+                </div>
+              </div>
+
+              <!-- Day 4 -->
+              <div class="timeline-card">
+                <div class="t-check completed">✓</div>
+                <div class="t-info">
+                  <div class="t-date-row">
+                    <strong>Day 4 - 18 May</strong>
+                    <span class="t-sev-badge t-sev-badge--med">Severity: 45%</span>
+                  </div>
+                  <p class="muted">Post-treatment follow-up photo. Lesions drying up.</p>
+                </div>
+                <div class="t-thumb">
+                  <img
+                    src="https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?auto=format&fit=crop&w=200&q=80"
+                    alt="Day 4 scan"
+                  />
+                </div>
+              </div>
+
+              <!-- Day 7 -->
+              <div class="timeline-card timeline-card--latest">
+                <div class="t-check active">★</div>
+                <div class="t-info">
+                  <div class="t-date-row">
+                    <strong>Day 7 - 21 May</strong>
+                    <span class="t-sev-badge t-sev-badge--low">Severity: 17%</span>
+                  </div>
+                  <p class="muted">Significant recovery observed across foliage.</p>
+                </div>
+                <div class="t-thumb">
+                  <img
+                    src="https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?auto=format&fit=crop&w=200&q=80"
+                    alt="Day 7 scan"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Interactive Add Observation Form -->
+            <div class="add-log-card" style="margin-top: 20px;">
+              <h3>Log New Field Observation</h3>
+              <form id="log-obs-form" style="display: flex; flex-direction: column; gap: 10px; margin-top: 10px;">
+                <input type="text" id="obs-note" placeholder="Enter observation (e.g. Applied Mancozeb spray @ 2g/L)..." required style="padding: 10px 14px; border: var(--border-default); border-radius: var(--radius-md);" />
+                <button type="submit" class="button-primary button-sm" style="align-self: flex-start;">+ Add Log Entry</button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Right Column: Progress Box & Q&A Widget -->
+          <div class="tracking-right">
+            <div class="progress-outcome-card">
+              <span class="eyebrow">Recovery Progress</span>
+              <div class="outcome-box">
+                <span class="outcome-icon">🌿</span>
+                <div>
+                  <h3>Great! Disease is reducing.</h3>
+                  <p>Keep monitoring and follow recommended practices for full recovery.</p>
+                </div>
+              </div>
+
+              <!-- Insight Q&A AI Assistant Widget -->
+              <div id="ai-qna-widget"></div>
+
+              <div class="action-buttons-stack" style="margin-top: 20px;">
+                <a class="button-primary" href="./crop-scan.html" style="width: 100%; justify-content: center;">
+                  Upload Next Follow-up Photo
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Mobile Fixed Bottom Navigation Bar -->
+    <nav class="bottom-nav-bar" aria-label="Mobile navigation">
+      <a class="bottom-nav-item" href="./index.html">
+        <span class="icon">🏠</span>
+        <span>Home</span>
+      </a>
+      <a class="bottom-nav-item" href="./my-farm.html">
+        <span class="icon">🌾</span>
+        <span>My Farm</span>
+      </a>
+      <a class="bottom-nav-item bottom-nav-item--scan" href="./crop-scan.html">
+        <div class="icon-wrap">📷</div>
+        <span>Scan</span>
+      </a>
+      <a class="bottom-nav-item" href="./irrigation-advisor.html">
+        <span class="icon">💧</span>
+        <span>Advisor</span>
+      </a>
+      <a class="bottom-nav-item" href="./market-insight.html">
+        <span class="icon">📈</span>
+        <span>Market</span>
+      </a>
+    </nav>
+
+    <script type="module" src="./src/follow-up.js"></script>
+  </body>
+</html>

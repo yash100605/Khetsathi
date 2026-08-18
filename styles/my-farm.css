@@ -1,0 +1,233 @@
+/* My Farm Page Layout Styles */
+
+.farm-layout {
+  padding: 24px 0 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Plot Tabs Bar */
+.plot-tabs-bar {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.plot-tab {
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: var(--border-default);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 180ms ease;
+  box-shadow: var(--shadow-card);
+}
+
+.plot-tab:hover {
+  background: var(--color-surface-muted);
+}
+
+.plot-tab.active {
+  background: var(--color-primary);
+  color: #ffffff;
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 12px rgba(21, 128, 61, 0.3);
+}
+
+/* Desktop Split Layout Grid */
+.farm-grid-desktop {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .farm-grid-desktop {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Left Column */
+.farm-left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.plot-hero-card {
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, #15803d 0%, #166534 100%);
+  color: #ffffff;
+  box-shadow: var(--shadow-elevated);
+}
+
+.plot-hero-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  gap: 16px;
+}
+
+.plot-hero-info h2 {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  margin: 0 0 6px;
+}
+
+.plot-hero-info p {
+  margin: 0 0 4px;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.plot-hero-info .muted {
+  font-size: 12px;
+  opacity: 0.75;
+  color: #ffffff;
+}
+
+.plot-hero-img {
+  width: 96px;
+  height: 96px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  flex-shrink: 0;
+}
+
+.plot-hero-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.farm-summary-card {
+  padding: 24px;
+  background: var(--color-surface);
+  border: var(--border-default);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+.farm-summary-card h3 {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  margin: 0 0 16px;
+}
+
+.summary-line {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: var(--border-default);
+  font-size: 14px;
+}
+
+.summary-action-box {
+  margin-top: 20px;
+  padding: 16px;
+  background: var(--color-tint-green);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(21, 128, 61, 0.2);
+}
+
+.summary-action-box p {
+  margin: 4px 0 12px;
+  font-size: 14px;
+}
+
+/* Right Column: Condition Grid */
+.farm-right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.condition-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.condition-section-header h3 {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  margin: 0;
+}
+
+.condition-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.cond-card {
+  padding: 18px;
+  background: var(--color-surface);
+  border: var(--border-default);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+}
+
+.cond-card--alert {
+  border-color: rgba(220, 38, 38, 0.3);
+  background: linear-gradient(180deg, rgba(220, 38, 38, 0.04) 0%, #ffffff 100%);
+}
+
+.c-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.c-icon {
+  font-size: 24px;
+}
+
+.c-label {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.cond-val {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--color-text);
+  line-height: 1.2;
+}
+
+.cond-badge {
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--color-surface-muted);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.cond-badge--good {
+  background: var(--color-tint-green);
+  color: var(--color-primary);
+}
+
+.cond-badge--warn {
+  background: var(--color-tint-red);
+  color: var(--color-error);
+}
+
+.advisor-cta-btn {
+  margin-top: 8px;
+  width: 100%;
+  text-align: center;
+}

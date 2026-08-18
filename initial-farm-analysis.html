@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KhetSaathi | Initial Farm Analysis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Merriweather:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/tokens.css" />
+    <link rel="stylesheet" href="./styles/initial-farm-analysis.css" />
+  </head>
+  <body>
+    <div class="status-strip">
+      <div class="container status-strip__inner">
+        <span>Offline-ready demo</span>
+        <span>Baseline evaluation generated: Today, 8:15 AM</span>
+      </div>
+    </div>
+
+    <header class="app-header">
+      <div class="container app-header__inner">
+        <a class="brand" href="./index.html" aria-label="KhetSaathi home">
+          <span class="brand__mark">KS</span>
+          <span class="brand__copy">
+            <strong>KhetSaathi</strong>
+            <span>Agricultural decision companion</span>
+          </span>
+        </a>
+        <nav class="app-nav">
+          <a class="app-nav__link" href="./index.html">Home</a>
+          <a class="app-nav__link" href="./my-farm.html">My Farm</a>
+          <a class="app-nav__link" href="./crop-scan.html">Crop Scan</a>
+          <a class="app-nav__link" href="./analysis.html">Analysis</a>
+          <a class="app-nav__link" href="./irrigation-advisor.html">Advisor</a>
+          <a class="app-nav__link" href="./weather-insight.html">Weather</a>
+          <a class="app-nav__link" href="./market-insight.html">Market</a>
+          <a class="app-nav__link" href="./farm-activity.html">Activity</a>
+          <a class="app-nav__link" href="./store.html">Store</a>
+        </nav>
+        <div class="app-header__actions">
+          <div class="nav-dropdown">
+            <button class="icon-button" type="button" aria-label="More screens">☰</button>
+            <div class="nav-dropdown__menu">
+              <a class="nav-dropdown__item" href="./onboarding.html">Onboarding Setup</a>
+              <a class="nav-dropdown__item" href="./initial-farm-analysis.html">Initial Farm Analysis</a>
+              <a class="nav-dropdown__item" href="./follow-up.html">Decision Follow-up</a>
+            </div>
+          </div>
+          <button class="avatar-button" type="button" aria-label="Open farmer profile">RP</button>
+        </div>
+      </div>
+    </header>
+
+    <nav class="section-nav" aria-label="Initial Farm Analysis sections">
+      <div class="container section-nav__inner">
+        <a href="#overview" class="section-nav__link">Baseline score</a>
+        <a href="#factors" class="section-nav__link">Risk factors</a>
+        <a href="#initialization" class="section-nav__link">Engine initialization</a>
+      </div>
+    </nav>
+
+    <main class="page-shell">
+      <section id="overview" class="hero-section">
+        <div class="container hero-layout">
+          <div class="hero-copy">
+            <p class="eyebrow">Screen 11 · Initial Farm Analysis</p>
+            <h1>Baseline farm evaluation & risk profile setup.</h1>
+            <p class="hero-text">
+              Before daily weather and crop health scans begin, KhetSaathi analyzes stable soil characteristics, crop stage vulnerability, and regional monsoon patterns.
+            </p>
+            <div id="baseline-summary" class="summary-strip"></div>
+          </div>
+          <div id="baseline-hero-card" class="baseline-hero-card"></div>
+        </div>
+      </section>
+
+      <section id="factors" class="section-block">
+        <div class="container dual-grid">
+          <div>
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Soil & Water Baseline</p>
+                <h2>Land Characteristics</h2>
+              </div>
+            </div>
+            <div id="soil-card" class="panel-card panel-card--large"></div>
+          </div>
+          <div>
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Stage Vulnerability</p>
+                <h2>Flowering Stage Risks</h2>
+              </div>
+            </div>
+            <div id="vulnerability-card" class="panel-card panel-card--large"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="initialization" class="section-block section-block--soft">
+        <div class="container flow-card">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Decision Engine Rules Ready</p>
+              <h2>Configured Engine Parameters</h2>
+            </div>
+          </div>
+          <div id="params-stack" class="params-stack"></div>
+          <div class="flow-actions" style="margin-top: 24px;">
+            <a class="button-primary" href="./index.html">Proceed to Daily Home Screen Recommendation &rsaquo;</a>
+            <a class="button-secondary" href="./my-farm.html">Modify Farm Profile Context</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./src/initial-farm-analysis.js"></script>
+  </body>
+</html>
