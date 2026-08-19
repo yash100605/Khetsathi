@@ -1,8 +1,8 @@
 import { farmPlots } from "./live-data.js";
-import { initQnAAssistant } from "./ai-assistant.js";
+// initQnAAssistant removed: replaced by Botpress webchat widget
 
 document.addEventListener("DOMContentLoaded", () => {
-  initQnAAssistant("myfarm");
+  // initQnAAssistant(...) removed: replaced by Botpress webchat widget
 
   const plotTabs = document.querySelectorAll(".plot-tab");
 

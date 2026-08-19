@@ -188,7 +188,7 @@ body {
     background: var(--color-surface);
     border-top: var(--border-default);
     box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
-    z-index: 1000;
+    z-index: 100;
     justify-content: space-around;
     align-items: center;
   }
@@ -302,3 +302,4 @@ body {
 .muted {
   color: var(--color-text-muted);
 }
+

@@ -1,5 +1,5 @@
-import { initQnAAssistant } from "./ai-assistant.js";
+// initQnAAssistant removed: replaced by Botpress webchat widget
 
 document.addEventListener("DOMContentLoaded", () => {
-  initQnAAssistant("home");
+  // initQnAAssistant(...) removed: replaced by Botpress webchat widget
 });

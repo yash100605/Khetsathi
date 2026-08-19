@@ -161,7 +161,7 @@ function renderStep() {
 
         <div class="wizard-actions">
           <button class="button-secondary" type="button" id="prev-btn">&lsaquo; Back</button>
-          <a class="button-primary" href="./initial-farm-analysis.html">Initialize Baseline Farm Analysis &rsaquo;</a>
+          <a class="button-primary" href="./initial-farm-analysis.html" id="finish-btn">Initialize Baseline Farm Analysis &rsaquo;</a>
         </div>
       </div>
     `;
@@ -181,6 +181,12 @@ function renderStep() {
       currentStep--;
       renderStep();
     }
+  });
+
+  // Persist the completed profile so the rest of the site (and the
+  // chatbot widget) can read the farmer's real setup instead of demo data.
+  document.querySelector("#finish-btn")?.addEventListener("click", () => {
+    localStorage.setItem("khetsaathi_farm_profile", JSON.stringify(wizardState));
   });
 }
 
