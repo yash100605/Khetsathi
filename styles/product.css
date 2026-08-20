@@ -82,14 +82,14 @@
   padding: 4px 10px;
   background: var(--color-primary);
   color: #fff;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   font-size: 12px;
   font-weight: 700;
 }
 
 .stock-status {
   padding: 4px 10px;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   font-size: 12px;
   font-weight: 700;
 }
@@ -132,7 +132,7 @@
 .category-chip {
   padding: 2px 10px;
   background: var(--color-surface-muted);
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   font-size: 12px;
 }
 
@@ -226,7 +226,7 @@
   font-size: 14px;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 900px) {
   .product-layout {
     grid-template-columns: 1fr;
   }

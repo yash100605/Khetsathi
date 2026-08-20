@@ -103,7 +103,7 @@
 
 .pill-btn {
   padding: 8px 14px;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   border: var(--border-default);
   background: rgba(255, 255, 255, 0.85);
   font-size: 13px;
@@ -144,7 +144,7 @@
 .category-pill {
   display: inline-block;
   padding: 2px 8px;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: rgba(47, 107, 59, 0.1);
   color: var(--color-primary);
   font-size: 11px;
@@ -162,7 +162,7 @@
   font-size: 12px;
   font-weight: 700;
   padding: 4px 10px;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
 }
 
 .sync-badge--pending_sync {
@@ -207,7 +207,7 @@
   box-shadow: var(--shadow-card);
 }
 
-@media (max-width: 960px) {
+@media (max-width: 900px) {
   .hero-layout,
   .form-row,
   .dual-grid {

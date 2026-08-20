@@ -1,7 +1,7 @@
-import { initQnAAssistant } from "./ai-assistant.js";
+// initQnAAssistant removed: replaced by Botpress webchat widget
 
 document.addEventListener("DOMContentLoaded", () => {
-  initQnAAssistant("economics");
+  // initQnAAssistant(...) removed: replaced by Botpress webchat widget
 
   const yieldRange = document.getElementById("yield-range");
   const priceRange = document.getElementById("price-range");

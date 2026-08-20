@@ -31,7 +31,7 @@
 
 .summary-chip {
   padding: 8px 14px;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: rgba(47, 107, 59, 0.1);
   color: var(--color-primary);
   font-size: 14px;
@@ -58,7 +58,7 @@
 
 .score-status {
   padding: 4px 12px;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: rgba(46, 125, 50, 0.12);
   color: var(--color-success);
   font-weight: 700;
@@ -111,7 +111,7 @@
 
 .vuln-level {
   padding: 2px 8px;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   font-size: 11px;
   font-weight: 700;
 }
@@ -163,14 +163,14 @@
 
 .status-chip {
   padding: 4px 10px;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: var(--color-primary);
   color: #fff;
   font-size: 12px;
   font-weight: 700;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 900px) {
   .hero-layout,
   .dual-grid {
     grid-template-columns: 1fr;

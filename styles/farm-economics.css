@@ -15,7 +15,7 @@
 .plot-pill {
   display: inline-block;
   padding: 4px 12px;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: var(--color-surface);
   border: var(--border-default);
   font-size: 13px;
@@ -113,7 +113,7 @@
   gap: 16px;
   padding: 20px;
   background: var(--color-tint-green);
-  border: 1px solid rgba(21, 128, 61, 0.2);
+  border: 1px solid rgba(var(--color-primary-rgb), 0.2);
   border-radius: var(--radius-lg);
   margin-top: 12px;
 }

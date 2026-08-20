@@ -1,8 +1,8 @@
 import { mandiData } from "./live-data.js";
-import { initQnAAssistant } from "./ai-assistant.js";
+// initQnAAssistant removed: replaced by Botpress webchat widget
 
 document.addEventListener("DOMContentLoaded", () => {
-  initQnAAssistant("market");
+  // initQnAAssistant(...) removed: replaced by Botpress webchat widget
 
   const mandiSelect = document.getElementById("mandi-select");
   const cropSelect = document.getElementById("crop-select");

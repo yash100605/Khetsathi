@@ -56,7 +56,7 @@
 
 .conf-pill {
   padding: 4px 10px;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: rgba(220, 38, 38, 0.12);
   color: var(--color-error);
   font-size: 12px;
@@ -77,14 +77,14 @@
 .sev-bar-wrap {
   width: 100%;
   height: 10px;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: rgba(220, 38, 38, 0.15);
   overflow: hidden;
 }
 
 .sev-bar-fill {
   height: 100%;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: var(--color-error);
 }
 
@@ -126,7 +126,7 @@
 
 .engine-badge {
   padding: 3px 8px;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: var(--color-tint-green);
   color: var(--color-primary);
   font-size: 11px;
@@ -141,6 +141,12 @@
   padding: 14px;
   background: var(--color-bg);
   border-radius: var(--radius-md);
+}
+
+@media (max-width: 480px) {
+  .engine-analysis-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .e-metric {

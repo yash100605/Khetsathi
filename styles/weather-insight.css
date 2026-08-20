@@ -31,7 +31,7 @@
 
 .summary-chip {
   padding: 8px 14px;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: rgba(47, 107, 59, 0.1);
   color: var(--color-primary);
   font-size: 14px;
@@ -71,6 +71,12 @@
   gap: 12px;
   padding-top: 16px;
   border-top: var(--border-default);
+}
+
+@media (max-width: 480px) {
+  .metrics-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .metric {
@@ -145,7 +151,7 @@
 .rain-pill {
   margin-top: 8px;
   padding: 4px 8px;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: rgba(47, 107, 59, 0.12);
   color: var(--color-primary);
   font-size: 12px;
@@ -185,7 +191,7 @@
   display: inline-block;
   margin-top: 12px;
   padding: 6px 12px;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   font-size: 12px;
   font-weight: 700;
 }
@@ -238,14 +244,14 @@
 
 .impact-pill {
   padding: 4px 10px;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: var(--color-primary);
   color: #fff;
   font-size: 12px;
   font-weight: 700;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 900px) {
   .hero-layout,
   .dual-grid {
     grid-template-columns: 1fr;

@@ -17,7 +17,7 @@
 
 .plot-tab {
   padding: 10px 22px;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   border: var(--border-default);
   background: var(--color-surface);
   color: var(--color-text);
@@ -37,7 +37,7 @@
   background: var(--color-primary);
   color: #ffffff;
   border-color: var(--color-primary);
-  box-shadow: 0 4px 12px rgba(21, 128, 61, 0.3);
+  box-shadow: 0 4px 12px rgba(var(--color-primary-rgb), 0.3);
 }
 
 /* Desktop Split Layout Grid */
@@ -137,7 +137,7 @@
   padding: 16px;
   background: var(--color-tint-green);
   border-radius: var(--radius-md);
-  border: 1px solid rgba(21, 128, 61, 0.2);
+  border: 1px solid rgba(var(--color-primary-rgb), 0.2);
 }
 
 .summary-action-box p {
@@ -210,7 +210,7 @@
 
 .cond-badge {
   padding: 3px 10px;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: var(--color-surface-muted);
   font-size: 11px;
   font-weight: 700;
