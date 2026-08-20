@@ -33,7 +33,7 @@
 .store-badge-pill {
   display: inline-flex;
   padding: 6px 12px;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: rgba(47, 107, 59, 0.12);
   color: var(--color-primary);
   font-weight: 700;
@@ -86,7 +86,7 @@
   padding: 4px 10px;
   background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(8px);
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   font-size: 12px;
   font-weight: 700;
   margin-bottom: 8px;
@@ -178,7 +178,7 @@
   padding: 4px 8px;
   background: var(--color-primary);
   color: #fff;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   font-size: 11px;
   font-weight: 700;
 }
@@ -263,7 +263,7 @@
   border-radius: var(--radius-lg);
 }
 
-@media (max-width: 960px) {
+@media (max-width: 900px) {
   .collections-grid,
   .dual-grid,
   .hero-layout {

@@ -1,13 +1,20 @@
 /* ============================================
    KhetSaathi Chatbot Widget
    Toggle button + expandable/collapsible side panel.
-   Desktop: docked sidebar that pushes main content over.
-   Mobile:  slides in as a full-width overlay drawer instead
-            (no room to "contract" content on small screens).
+
+   Responsive strategy (3 tiers):
+   - Wide desktop (>=1280px): docked sidebar that PUSHES main content over.
+     There's enough room to sacrifice ~400px without squeezing anything.
+   - Medium desktop/tablet (900-1279px): panel OVERLAYS content instead of
+     pushing it. Pushing here would leave too little room for the main
+     layout and cause cards/text to overlap.
+   - Mobile (<900px): full-width overlay drawer.
    ============================================ */
 
 :root {
-  --chat-panel-width: 400px;
+  /* Scales with viewport, but caps at a sane min/max so it's never too
+     cramped on medium screens or absurdly wide on huge monitors. */
+  --chat-panel-width: clamp(340px, 30vw, 420px);
   --chat-transition: 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -54,9 +61,10 @@
   display: block;
 }
 
-/* When open on desktop, move the button to sit just left of the docked
-   panel instead of being covered by it. */
-@media (min-width: 901px) {
+/* Only move the button out of the panel's way on the wide-desktop "push"
+   tier. On the overlay tiers the panel sits on top, so we leave the
+   button where it is (still visible, higher z-index than the panel). */
+@media (min-width: 1280px) {
   body.chat-panel-open #chatbot-toggle-btn {
     right: calc(var(--chat-panel-width) + 20px);
   }
@@ -92,11 +100,9 @@
   height: 100%;
 }
 
-/* -------- Content contraction (desktop only) --------
-   Pushes the header, main content, and bottom nav over to make room for
-   the docked panel, instead of the panel overlaying on top of them. */
+/* -------- Wide desktop: push main content over -------- */
 
-@media (min-width: 901px) {
+@media (min-width: 1280px) {
   .app-header,
   .page-shell,
   .bottom-nav-bar {
@@ -110,7 +116,17 @@
   }
 }
 
-/* -------- Mobile: overlay drawer instead of push -------- */
+/* -------- Medium desktop/tablet: overlay, don't push --------
+   Not enough room to sacrifice ~400px without squeezing the layout, so
+   the panel floats on top of content here instead. */
+
+@media (min-width: 900px) and (max-width: 1279px) {
+  #botpress-webchat-panel {
+    width: min(380px, 46vw);
+  }
+}
+
+/* -------- Mobile: full-width overlay drawer -------- */
 
 @media (max-width: 900px) {
   #botpress-webchat-panel {

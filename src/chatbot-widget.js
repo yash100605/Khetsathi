@@ -149,6 +149,8 @@ function startFooterWatch(panel) {
   });
 }
 
+const STATE_KEY = "khetsaathi_chat_open";
+
 function buildWidget() {
   // Chat panel + Botpress embed target
   const panel = document.createElement("div");
@@ -166,7 +168,7 @@ function buildWidget() {
 
   let isOpen = false;
 
-  const setOpen = async (open) => {
+  const setOpen = async (open, { persist = true } = {}) => {
     isOpen = open;
     toggleBtn.classList.toggle("is-open", isOpen);
     document.body.classList.toggle("chat-panel-open", isOpen);
@@ -174,6 +176,17 @@ function buildWidget() {
       "aria-label",
       isOpen ? "Close KhetSaathi chat" : "Open KhetSaathi chat"
     );
+
+    if (persist) {
+      // Survives navigating between pages (this is a multi-page site, so
+      // each link click is a full reload) but clears when the tab closes.
+      try {
+        sessionStorage.setItem(STATE_KEY, isOpen ? "1" : "0");
+      } catch (err) {
+        // Ignore — private browsing etc. Chat just won't stay open across
+        // page loads in that case.
+      }
+    }
 
     if (isOpen) {
       await ensureBotpressLoaded();
@@ -189,6 +202,27 @@ function buildWidget() {
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && isOpen) setOpen(false);
   });
+
+  // Restore state from the previous page, if the chat was left open.
+  let wasOpen = false;
+  try {
+    wasOpen = sessionStorage.getItem(STATE_KEY) === "1";
+  } catch (err) {
+    // Ignore — falls back to closed.
+  }
+  if (wasOpen) {
+    // Skip the slide-in transition on initial page load so it doesn't
+    // visibly animate in on every navigation — it should just already
+    // be there.
+    panel.style.transition = "none";
+    toggleBtn.style.transition = "none";
+    setOpen(true, { persist: false }).then(() => {
+      requestAnimationFrame(() => {
+        panel.style.transition = "";
+        toggleBtn.style.transition = "";
+      });
+    });
+  }
 }
 
 document.addEventListener("DOMContentLoaded", buildWidget);

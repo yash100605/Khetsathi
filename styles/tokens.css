@@ -3,6 +3,7 @@
 :root {
   /* Color Palette - KhetSaathi Green Palette */
   --color-primary: #15803d; /* Vibrant Forest Green */
+  --color-primary-rgb: 21, 128, 61; /* same color, as r,g,b for use in rgba() */
   --color-primary-hover: #166534;
   --color-secondary: #854d0e; /* Earthy Ochre */
   --color-bg: #f8fafc; /* Crisp Neutral Background */
@@ -30,6 +31,7 @@
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 18px;
+  --radius-pill: 999px;
 
   /* Borders */
   --border-default: 1px solid var(--color-border);
@@ -120,7 +122,7 @@ body {
   font-weight: 600;
   font-size: 14px;
   padding: 6px 12px;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   transition: all 150ms ease;
 }
 
@@ -225,7 +227,7 @@ body {
   place-items: center;
   font-size: 22px;
   margin-top: -16px;
-  box-shadow: 0 4px 10px rgba(21, 128, 61, 0.3);
+  box-shadow: 0 4px 10px rgba(var(--color-primary-rgb), 0.3);
 }
 
 /* Typography & Button Utilities */
@@ -284,7 +286,7 @@ body {
   display: inline-flex;
   align-items: center;
   padding: 4px 10px;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   font-size: 12px;
   font-weight: 700;
 }

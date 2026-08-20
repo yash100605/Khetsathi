@@ -63,7 +63,7 @@
   font-size: 11px;
   font-weight: 700;
   padding: 2px 8px;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
 }
 
 .corner {
@@ -122,7 +122,7 @@
   background: var(--color-primary);
   display: grid;
   place-items: center;
-  box-shadow: 0 6px 16px rgba(21, 128, 61, 0.4);
+  box-shadow: 0 6px 16px rgba(var(--color-primary-rgb), 0.4);
   transition: transform 150ms ease;
 }
 
@@ -164,4 +164,18 @@
 
 .tip-chip .icon {
   font-size: 20px;
+}
+
+@media (max-width: 480px) {
+  .scan-header-text h1 {
+    font-size: 22px;
+  }
+
+  .tips-chips-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .camera-controls-bar {
+    gap: 8px;
+  }
 }
