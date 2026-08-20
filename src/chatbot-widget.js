@@ -169,6 +169,7 @@ function buildWidget() {
   const setOpen = async (open) => {
     isOpen = open;
     toggleBtn.classList.toggle("is-open", isOpen);
+    document.body.classList.toggle("chat-panel-open", isOpen);
     toggleBtn.setAttribute(
       "aria-label",
       isOpen ? "Close KhetSaathi chat" : "Open KhetSaathi chat"
@@ -184,6 +185,10 @@ function buildWidget() {
   };
 
   toggleBtn.addEventListener("click", () => setOpen(!isOpen));
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && isOpen) setOpen(false);
+  });
 }
 
 document.addEventListener("DOMContentLoaded", buildWidget);

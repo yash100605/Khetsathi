@@ -1,12 +1,22 @@
 /* ============================================
    KhetSaathi Chatbot Widget
-   Floating toggle button + slide-in chat panel
+   Toggle button + expandable/collapsible side panel.
+   Desktop: docked sidebar that pushes main content over.
+   Mobile:  slides in as a full-width overlay drawer instead
+            (no room to "contract" content on small screens).
    ============================================ */
+
+:root {
+  --chat-panel-width: 400px;
+  --chat-transition: 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* -------- Toggle button -------- */
 
 #chatbot-toggle-btn {
   position: fixed;
-  bottom: 90px;
-  right: 20px;
+  bottom: 24px;
+  right: 24px;
   width: 56px;
   height: 56px;
   border-radius: 50%;
@@ -19,7 +29,7 @@
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   z-index: 2100;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition: right var(--chat-transition), transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 #chatbot-toggle-btn:hover {
@@ -44,33 +54,37 @@
   display: block;
 }
 
+/* When open on desktop, move the button to sit just left of the docked
+   panel instead of being covered by it. */
+@media (min-width: 901px) {
+  body.chat-panel-open #chatbot-toggle-btn {
+    right: calc(var(--chat-panel-width) + 20px);
+  }
+}
+
+/* -------- Side panel -------- */
+
 #botpress-webchat-panel {
   position: fixed;
-  bottom: 160px;
-  right: 20px;
-  width: 380px;
-  height: 600px;
-  max-width: 90vw;
-  max-height: 65vh;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: var(--chat-panel-width);
+  max-width: 100vw;
   z-index: 2000;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
   background: var(--color-surface, #fff);
+  box-shadow: -8px 0 32px rgba(0, 0, 0, 0.18);
+  border-left: var(--border-default, 1px solid #e2e2e2);
 
-  opacity: 0;
-  transform: translateY(16px) scale(0.98);
-  pointer-events: none;
+  transform: translateX(100%);
   visibility: hidden;
-  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0s linear 0.18s;
+  transition: transform var(--chat-transition), visibility 0s linear var(--chat-transition);
 }
 
 #botpress-webchat-panel.is-open {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-  pointer-events: auto;
+  transform: translateX(0);
   visibility: visible;
-  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0s linear 0s;
+  transition: transform var(--chat-transition), visibility 0s linear 0s;
 }
 
 #botpress-webchat-panel #botpress-webchat {
@@ -78,23 +92,40 @@
   height: 100%;
 }
 
+/* -------- Content contraction (desktop only) --------
+   Pushes the header, main content, and bottom nav over to make room for
+   the docked panel, instead of the panel overlaying on top of them. */
+
+@media (min-width: 901px) {
+  .app-header,
+  .page-shell,
+  .bottom-nav-bar {
+    transition: margin-right var(--chat-transition);
+  }
+
+  body.chat-panel-open .app-header,
+  body.chat-panel-open .page-shell,
+  body.chat-panel-open .bottom-nav-bar {
+    margin-right: var(--chat-panel-width);
+  }
+}
+
+/* -------- Mobile: overlay drawer instead of push -------- */
+
+@media (max-width: 900px) {
+  #botpress-webchat-panel {
+    width: 100vw;
+  }
+
+  #chatbot-toggle-btn {
+    bottom: 84px; /* clear the bottom nav bar */
+    right: 16px;
+  }
+}
+
 /* Force-hide Botpress's own branding footer, in case it toggles itself
    visible after load. JS in chatbot-widget.js backs this up for cases
    where the footer lives inside a shadow root CSS can't reach. */
 .bpComposerFooter {
   display: none !important;
-}
-
-@media (max-width: 480px) {
-  #chatbot-toggle-btn {
-    bottom: 74px;
-    right: 12px;
-  }
-
-  #botpress-webchat-panel {
-    bottom: 138px;
-    right: 10px;
-    width: calc(100vw - 20px);
-    height: 65vh;
-  }
 }
